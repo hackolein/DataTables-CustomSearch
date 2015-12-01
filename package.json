@@ -1,0 +1,13 @@
+{
+  "name": "DataTables-CustomSearch",
+  "url": "http://ruhley.github.io/DataTables-CustomSearch/",
+  "author": "ruhley",
+  "devDependencies": {
+    "grunt": "^0.4.*",
+    "grunt-contrib-jshint": "^0.10.*",
+    "grunt-contrib-uglify": "^0.6.*",
+    "grunt-contrib-watch": "^0.6.*",
+    "matchdep": "^0.3.*",
+    "time-grunt": "^1.0.*"
+  }
+}

@@ -591,6 +591,7 @@
 
 				switch (field.type) {
 					case 'string':
+					case 'html':
 						if (field.label) {
 							field.fieldLabel = '<label for="' + field.id + '">' + field.label + '</label>';
 						}
@@ -890,9 +891,9 @@
 						newDataType = 'number';
 					}
 				}
-				
+
 				if (newDataType === null) {
-					newDataType = 'string';	
+					newDataType = 'string';
 				}
 
 				return newDataType.toLowerCase();
