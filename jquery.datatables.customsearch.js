@@ -108,6 +108,7 @@
 					field.columns.sort();
 					field.multiple        = this.getMultiple(field.multiple);
 					field.type            = this.getType(field.type, field.columns);
+          field.withContainer   = field.withContainer === true ? true : false;
 					field.dataType        = this.getDataType(field.columns);
 					field.range           = this.getRange(field.range);
 					field.dateFormat      = this.getDateFormat(field.dateFormat);
@@ -690,15 +691,21 @@
 
 				field.fullField = '';
 
-				if ($.isArray(field.field)) {
-					for (i = 0; i < field.field.length; i++) {
-						field.fullField += field.fieldLabel[i];
-						field.fullField += field.field[i];
-					}
-				} else {
-					field.fullField += field.fieldLabel;
-					field.fullField += field.field;
-				}
+        if ($.isArray(field.field)) {
+          field.fullField = field.withContainer === true ? '<div class="hackolein-datatables-customsearch--input-container--advanced">' : '';
+          for (i = 0; i < field.field.length; i++) {
+            field.fullField += field.withContainer === true ? '<div class="hackolein-datatables-customsearch--input-container--advanced--sub">' : '';
+            field.fullField += field.fieldLabel[i];
+            field.fullField += field.field[i];
+            field.fullField += field.withContainer === true ? '</div>' : '';
+          }
+          field.fullField += field.withContainer === true ? '</div>' : '';
+        } else {
+          field.fullField = field.withContainer === true ? '<div class="hackolein-datatables-customsearch--input-container">' : '';
+          field.fullField += field.fieldLabel;
+          field.fullField += field.field;
+          field.fullField += field.withContainer === true ? '</div>' : '';
+        }
 
 				return field;
 			},
