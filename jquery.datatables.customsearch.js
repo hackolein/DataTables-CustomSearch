@@ -692,9 +692,9 @@
 				field.fullField = '';
 
         if ($.isArray(field.field)) {
-          field.fullField = field.withContainer === true ? '<div class="hackolein-datatables-customsearch--input-container--advanced hackolein-datatables-customsearch--input-container--advanced-' + field.id + '">' : '';
+          field.fullField = field.withContainer === true ? '<div class="hackolein-datatables-customsearch--input-container--advanced hackolein-datatables-customsearch--input-container--advanced">' : '';
           for (i = 0; i < field.field.length; i++) {
-            field.fullField += field.withContainer === true ? '<div class="hackolein-datatables-customsearch--input-container--advanced--sub hackolein-datatables-customsearch--input-container--advanced--sub-' + field.id + '">' : '';
+            field.fullField += field.withContainer === true ? '<div class="hackolein-datatables-customsearch--input-container--advanced--sub hackolein-datatables-customsearch--input-container--advanced--sub-' + field.id[i] + '">' : '';
             field.fullField += field.fieldLabel[i];
             field.fullField += field.field[i];
             field.fullField += field.withContainer === true ? '</div>' : '';
