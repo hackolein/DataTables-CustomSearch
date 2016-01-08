@@ -692,16 +692,16 @@
 				field.fullField = '';
 
         if ($.isArray(field.field)) {
-          field.fullField = field.withContainer === true ? '<div class="hackolein-datatables-customsearch--input-container--advanced">' : '';
+          field.fullField = field.withContainer === true ? '<div class="hackolein-datatables-customsearch--input-container--advanced hackolein-datatables-customsearch--input-container--advanced-' + field.id + '">' : '';
           for (i = 0; i < field.field.length; i++) {
-            field.fullField += field.withContainer === true ? '<div class="hackolein-datatables-customsearch--input-container--advanced--sub">' : '';
+            field.fullField += field.withContainer === true ? '<div class="hackolein-datatables-customsearch--input-container--advanced--sub hackolein-datatables-customsearch--input-container--advanced--sub-' + field.id + '">' : '';
             field.fullField += field.fieldLabel[i];
             field.fullField += field.field[i];
             field.fullField += field.withContainer === true ? '</div>' : '';
           }
           field.fullField += field.withContainer === true ? '</div>' : '';
         } else {
-          field.fullField = field.withContainer === true ? '<div class="hackolein-datatables-customsearch--input-container">' : '';
+          field.fullField = field.withContainer === true ? '<div class="hackolein-datatables-customsearch--input-container hackolein-datatables-customsearch--input-container-' + field.id + '">' : '';
           field.fullField += field.fieldLabel;
           field.fullField += field.field;
           field.fullField += field.withContainer === true ? '</div>' : '';
