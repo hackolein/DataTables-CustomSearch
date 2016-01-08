@@ -694,7 +694,18 @@
         if ($.isArray(field.field)) {
           field.fullField = field.withContainer === true ? '<div class="hackolein-datatables-customsearch--input-container--advanced hackolein-datatables-customsearch--input-container--advanced">' : '';
           for (i = 0; i < field.field.length; i++) {
-            field.fullField += field.withContainer === true ? '<div class="hackolein-datatables-customsearch--input-container--advanced--sub hackolein-datatables-customsearch--input-container--advanced--sub-' + field.id[i] + '">' : '';
+            var fieldId = '';
+            if(typeof field.id.min != 'undefined' && i % 2 === 0) {
+              fieldId = field.id.min
+            }
+            else if (typeof field.id.max != 'undefined' && i % 2 === 1){
+              fieldId = field.id.max
+            }
+            else {
+              fieldId = field.id
+            }
+
+            field.fullField += field.withContainer === true ? '<div class="hackolein-datatables-customsearch--input-container--advanced--sub hackolein-datatables-customsearch--input-container--advanced--sub-' + fieldId + '">' : '';
             field.fullField += field.fieldLabel[i];
             field.fullField += field.field[i];
             field.fullField += field.withContainer === true ? '</div>' : '';
