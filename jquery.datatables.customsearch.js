@@ -877,7 +877,8 @@
 						newType = 'string';
 					}
 				}
-        else {
+
+        if (!newType) {
           newType = 'string';
         }
 
