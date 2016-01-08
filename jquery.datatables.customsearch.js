@@ -877,6 +877,9 @@
 						newType = 'string';
 					}
 				}
+        else {
+          newType = 'string';
+        }
 
 				return newType.toLowerCase();
 			},
